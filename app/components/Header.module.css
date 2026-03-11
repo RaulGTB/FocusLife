@@ -53,8 +53,7 @@
   gap: var(--sp-2);
 }
 
-.themeBtn,
-.notifBtn {
+.themeBtn {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-md);
@@ -69,38 +68,29 @@
   cursor: pointer;
 }
 
-.themeBtn:hover,
-.notifBtn:hover {
+.themeBtn:hover {
   background: var(--bg-card);
   border-color: var(--glass-border);
   color: var(--text-primary);
   box-shadow: var(--glass-inner-shadow);
 }
 
-.notifDot {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 8px;
-  height: 8px;
-  background: var(--accent);
-  border-radius: var(--radius-full);
-  border: 2px solid var(--bg-sidebar);
-  box-shadow: 0 0 6px var(--accent-bg);
-}
-
 @media (max-width: 768px) {
   .header {
     left: 0;
-    padding: 0 var(--sp-4);
+    padding: 0 var(--sp-3);
     padding-left: 60px;
+  }
+  .greetingText {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-bold);
+  }
+  .date {
+    font-size: 10px;
   }
 }
 
 @media (max-width: 480px) {
-  .greetingText {
-    font-size: var(--fs-sm);
-  }
   .date {
     display: none;
   }

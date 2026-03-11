@@ -823,15 +823,18 @@ textarea {
 .tabs {
   display: flex;
   gap: var(--sp-1);
-  padding: 3px;
-  background: var(--bg-card);
+  padding: 4px;
+  background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-xl);
   margin-bottom: var(--sp-6);
   overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
+.tabs::-webkit-scrollbar { display: none; }
 
 .tab {
   padding: var(--sp-2) var(--sp-5);
@@ -1002,8 +1005,13 @@ textarea {
   h1 { font-size: var(--fs-2xl); }
   h2 { font-size: var(--fs-xl); }
   .search-bar { max-width: 100% !important; }
-  .tabs { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    padding: var(--sp-2) var(--sp-3);
+    font-size: var(--fs-xs);
+  }
+  .tabs {
+    border-radius: var(--radius-lg);
+  }
 }
 
 @media (min-width: 769px) {
@@ -1026,4 +1034,8 @@ textarea {
   }
   h1 { font-size: var(--fs-xl); }
   .star-rating span { font-size: 28px !important; }
+  .tab {
+    padding: var(--sp-1) var(--sp-2);
+    font-size: 10px;
+  }
 }

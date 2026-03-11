@@ -9,7 +9,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.left}>
         <div className={styles.greeting}>
-          <h2 className={styles.greetingText}>{getGreeting()}</h2>
+          <h2 className={styles.greetingText}>FocusLife</h2>
           <p className={styles.date}>{getFormattedDate()}</p>
         </div>
       </div>
