@@ -1,0 +1,86 @@
+.pinGate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: var(--sp-8);
+}
+
+.pinCard {
+  text-align: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-10);
+  max-width: 380px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+}
+
+.lockIcon {
+  margin-bottom: var(--sp-5);
+  opacity: 0.8;
+}
+
+.pinTitle {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--sp-2);
+}
+
+.pinDesc {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--sp-6);
+}
+
+.pinInput {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  text-align: center;
+  font-size: 28px;
+  letter-spacing: 8px;
+  border: 1px solid var(--border-secondary);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  border-radius: var(--radius-lg);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.pinInput:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+.pinError {
+  color: var(--error);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--sp-3);
+}
+
+.pinButton {
+  width: 100%;
+  max-width: 200px;
+  padding: var(--sp-3) var(--sp-6);
+  border: none;
+  border-radius: var(--radius-lg);
+  background: var(--accent);
+  color: white;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pinButton:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px var(--accent-bg);
+}

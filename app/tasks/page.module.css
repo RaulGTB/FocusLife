@@ -1,0 +1,109 @@
+.tasksPage { animation: fadeIn var(--duration-normal) var(--ease-out); }
+
+.progressSection {
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5);
+  margin-bottom: var(--sp-6);
+  box-shadow: var(--glass-inner-shadow), var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+.progressSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--glass-highlight), transparent);
+}
+.progressInfo { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--sp-3); }
+.progressText { font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--text-secondary); }
+.progressPercent { font-family: var(--font-mono); font-size: var(--fs-lg); font-weight: var(--fw-bold); color: var(--accent); text-shadow: 0 0 12px var(--accent-bg); }
+.progressSub { font-size: var(--fs-xs); color: var(--text-tertiary); margin-top: var(--sp-2); display: block; }
+
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-6);
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+.categoryFilters { display: flex; gap: var(--sp-2); flex-wrap: wrap; }
+.filterBtn {
+  display: flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs); font-weight: var(--fw-medium);
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  cursor: pointer; transition: all var(--duration-fast);
+  box-shadow: var(--glass-inner-shadow);
+}
+.filterBtn:hover { border-color: var(--border-secondary); color: var(--text-primary); }
+.filterActive { background: var(--accent-bg); color: var(--accent); border-color: var(--border-active); box-shadow: 0 0 10px var(--accent-bg); }
+
+.toggleLabel { display: flex; align-items: center; gap: var(--sp-2); cursor: pointer; }
+.toggleInput { accent-color: var(--accent); }
+.toggleText { font-size: var(--fs-xs); color: var(--text-secondary); }
+
+.taskList { display: flex; flex-direction: column; gap: var(--sp-3); }
+.taskCard {
+  display: flex; align-items: flex-start; gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--duration-fast) var(--ease-out);
+  box-shadow: var(--glass-inner-shadow);
+  position: relative;
+  overflow: hidden;
+}
+.taskCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--glass-highlight), transparent);
+}
+.taskCard:hover { background: var(--bg-card-hover); border-color: var(--border-secondary); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.taskCompleted { opacity: 0.55; }
+
+.taskContent { flex: 1; min-width: 0; }
+.taskTop { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); margin-bottom: var(--sp-1); }
+.taskTitle { font-weight: var(--fw-semibold); font-size: var(--fs-sm); }
+.titleDone { text-decoration: line-through; color: var(--text-tertiary); }
+.taskDesc { font-size: var(--fs-xs); color: var(--text-secondary); margin-bottom: var(--sp-2); }
+.taskMeta { display: flex; gap: var(--sp-3); font-size: var(--fs-xs); }
+.taskCat { font-weight: var(--fw-medium); }
+.taskDue { color: var(--text-tertiary); font-family: var(--font-mono); }
+
+/* Goals */
+.goalsList { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--sp-5); }
+.goalCard { }
+.goalHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-2); }
+.periodBadge { background: var(--accent-bg); color: var(--accent); backdrop-filter: blur(8px); box-shadow: 0 0 8px var(--accent-bg); }
+.goalCategory { font-size: var(--fs-xs); color: var(--text-tertiary); margin-bottom: var(--sp-4); }
+.goalProgress { display: flex; align-items: center; gap: var(--sp-3); }
+.goalProgress .progress-bar { flex: 1; }
+.goalPercent { font-family: var(--font-mono); font-size: var(--fs-sm); font-weight: var(--fw-bold); color: var(--accent); min-width: 40px; text-align: right; }
+
+@media (max-width: 768px) {
+  .taskCard {
+    padding: var(--sp-3) var(--sp-4);
+    gap: var(--sp-3);
+  }
+  .goalsList { grid-template-columns: 1fr; }
+}

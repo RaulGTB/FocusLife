@@ -1,0 +1,107 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  right: 0;
+  height: var(--header-height);
+  background: var(--bg-sidebar);
+  backdrop-filter: blur(var(--glass-blur-heavy));
+  -webkit-backdrop-filter: blur(var(--glass-blur-heavy));
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--sp-8);
+  z-index: var(--z-sticky);
+  transition: left var(--duration-normal) var(--ease-out);
+  box-shadow: 0 1px 0 var(--glass-highlight);
+}
+
+/* Top edge highlight */
+.header::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--glass-highlight), transparent);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.greetingText {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+  margin: 0;
+}
+
+.date {
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.themeBtn,
+.notifBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--duration-fast) var(--ease-out);
+  position: relative;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.themeBtn:hover,
+.notifBtn:hover {
+  background: var(--bg-card);
+  border-color: var(--glass-border);
+  color: var(--text-primary);
+  box-shadow: var(--glass-inner-shadow);
+}
+
+.notifDot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--bg-sidebar);
+  box-shadow: 0 0 6px var(--accent-bg);
+}
+
+@media (max-width: 768px) {
+  .header {
+    left: 0;
+    padding: 0 var(--sp-4);
+    padding-left: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .greetingText {
+    font-size: var(--fs-sm);
+  }
+  .date {
+    display: none;
+  }
+}
